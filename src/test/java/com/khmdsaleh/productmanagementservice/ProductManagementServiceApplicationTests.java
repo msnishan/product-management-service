@@ -1,5 +1,6 @@
 package com.khmdsaleh.productmanagementservice;
 
+import com.khmdsaleh.productmanagementservice.db.model.ProductType;
 import com.khmdsaleh.productmanagementservice.model.ProductRequest;
 import com.khmdsaleh.productmanagementservice.model.ProductResponse;
 import com.khmdsaleh.productmanagementservice.repository.ProductRepository;
@@ -38,7 +39,7 @@ public class ProductManagementServiceApplicationTests {
     public void saveProduct() {
         ProductRequest productRequest = new ProductRequest();
         productRequest.setProductName("Test Product");
-        productRequest.setProductType("clothing");
+        productRequest.setProductType(ProductType.CLOTHING);
         productRequest.setProductDescription("Test Product Description");
         productRequest.setCreatedOrUpdatedBy("Test User");
 
@@ -53,7 +54,7 @@ public class ProductManagementServiceApplicationTests {
 
     @Test
     public void retrieve() {
-        saveProducts("mobile");
+        saveProducts(ProductType.MOBILE);
         ResponseEntity<List<ProductResponse>> productResponse = testRestTemplate.exchange("/products/mobile",
                 HttpMethod.GET, null, new ParameterizedTypeReference<List<ProductResponse>>() {
                 });
@@ -63,7 +64,7 @@ public class ProductManagementServiceApplicationTests {
 
     @Test
     public void delete() {
-        saveProducts("mobile");
+        saveProducts(ProductType.MOBILE);
         testRestTemplate.delete("/products/1");
         testRestTemplate.delete("/products/2");
         ResponseEntity<List<ProductResponse>> productResponse = testRestTemplate.exchange("/products/mobile",
@@ -78,7 +79,7 @@ public class ProductManagementServiceApplicationTests {
         productRepository.deleteAll();
     }
 
-    private void saveProducts(String productType) {
+    private void saveProducts(ProductType productType) {
 
         ProductRequest productRequest = new ProductRequest();
         productRequest.setProductName("Test Product");

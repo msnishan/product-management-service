@@ -15,7 +15,7 @@ public final class ObjectFactory {
     public static Product mapProductRequest(ProductRequest productRequest) {
         Product product = new Product();
         product.setProductName(productRequest.getProductName());
-        product.setProductType(ProductType.fromValue(productRequest.getProductType()));
+        product.setProductType(productRequest.getProductType());
         product.setProductDescription(productRequest.getProductDescription());
         product.setCreatedBy(productRequest.getCreatedOrUpdatedBy());
         product.setCreateDate(LocalDate.now());

@@ -1,8 +1,10 @@
 package com.khmdsaleh.productmanagementservice.model;
 
+import com.khmdsaleh.productmanagementservice.db.model.ProductType;
+
 public class ProductRequest {
     private String productName;
-    private String productType;
+    private ProductType productType;
     private String productDescription;
     private String createdOrUpdatedBy;
 
@@ -17,11 +19,11 @@ public class ProductRequest {
         this.productName = productName;
     }
 
-    public String getProductType() {
+    public ProductType getProductType() {
         return productType;
     }
 
-    public void setProductType(String productType) {
+    public void setProductType(ProductType productType) {
         this.productType = productType;
     }
 
