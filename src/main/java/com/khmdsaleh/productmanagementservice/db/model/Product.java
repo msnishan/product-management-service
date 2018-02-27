@@ -1,7 +1,5 @@
 package com.khmdsaleh.productmanagementservice.db.model;
 
-import org.joda.time.DateTime;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -31,7 +29,7 @@ public class Product {
     private LocalDate createDate;
 
     @Column(name = "LAST_UPDATED_DATE")
-    private DateTime lastUpdatedDate;
+    private LocalDate lastUpdatedDate;
 
     @Column(name = "CREATED_BY", nullable = false)
     private String createdBy;
@@ -85,11 +83,11 @@ public class Product {
         this.createDate = createDate;
     }
 
-    public DateTime getLastUpdatedDate() {
+    public LocalDate getLastUpdatedDate() {
         return lastUpdatedDate;
     }
 
-    public void setLastUpdatedDate(DateTime lastUpdatedDate) {
+    public void setLastUpdatedDate(LocalDate lastUpdatedDate) {
         this.lastUpdatedDate = lastUpdatedDate;
     }
 

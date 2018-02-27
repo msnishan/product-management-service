@@ -4,8 +4,6 @@ import com.khmdsaleh.productmanagementservice.db.model.Product;
 import com.khmdsaleh.productmanagementservice.db.model.ProductType;
 import com.khmdsaleh.productmanagementservice.model.ProductRequest;
 import com.khmdsaleh.productmanagementservice.model.ProductResponse;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
 
 import java.time.LocalDate;
 
